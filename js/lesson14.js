@@ -1,33 +1,27 @@
-// LESSON 14 Функции 2.0
-"use strict";
+// LESSON 18 Callback-функции
+'use strict'
 
-const usdCurr = 28;
-const eurCurr = 32;
-const discount = 0.9;
-
-function convert(amount, curr) {
-     return curr * amount;
+function first() {
+    // Do something
+    setTimeout(function() {
+        console.log(1);
+    }, 500);
 }
 
-// return. После return функция завершает свою работу
-// не ставить пробел после return
-
-function promotion(result) {
-    console.log(result * discount);
+function second() {
+    console.log(2);
 }
 
-const res = convert(500, usdCurr);
-promotion(res);
+first();
+second();
 
-function test() {
-    for (let i = 0; i < 5; i++) {
-        console.log(i);
-        if (i === 3) return;
-    }
-    console.log('Done');
+function learnJS(lang, callback) {
+    console.log(`Я учу: ${lang}`);
+    callback();
 }
 
-test();
+function done() {
+    console.log('Я прошел этот урок!');
+}
 
-function doNothing() {} // Пустая функция возвращает что то вроде undefined
-console.log(doNothing() === undefined);
+learnJS('JavaScript', done);

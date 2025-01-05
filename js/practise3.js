@@ -1,5 +1,5 @@
-// LESSON 17 Метод trim()
-"use strict"
+// LESSON 16 Практика ч3. Используем функции
+'use strict'
 
 let numberOfFilms;
 
@@ -22,11 +22,24 @@ const personalMovieDB = {
 };
 
 
+// for (let i = 0; i < 2; i++) {
+//     const a = prompt("Один из последних просмотренных фильмов?", ""),
+//           b = prompt("На сколько оцените его?", "");
+
+//     if (a != null && b != null && a != '' && b != '' && a.length < 50) {
+//         personalMovieDB.movies[a] = b;
+//         console.log('done');
+//     } else {
+//         console.log('error');
+//         i--;
+//     }
+// }
+
 function rememberMyFilms() {
     let j = 0;
     while (j < 2) {
-        const a = prompt("Один из последних просмотренных фильмов?", "").trim(),
-              b = prompt("На сколько оцените его?", "").trim();
+        const a = prompt("Один из последних просмотренных фильмов?", ""),
+              b = prompt("На сколько оцените его?", "");
     
         if (a != null && b != null && a != '' && b != '' && a.length < 50) {
             personalMovieDB.movies[a] = b;

@@ -1,32 +1,43 @@
-// LESSON 15 Методы и свойства строк и чисел
-"use strict";
+// LESSON 19 Обьекты, деструктуризация обьектов
+"use strict"
 
-const str = "test";
+const options = {
+    name: 'test',
+    width: 1024,
+    height: 1024,
+    colors: {
+        border: 'black',
+        bg: 'red'
+    },
+    makeTest: function() {
+        console.log("Test");
+    }
+};
 
-console.log(str.toUpperCase()); // Преобразует строку в верхний регистр
-console.log(str.toLowerCase()); // Преобразует строку в нижний регистр
-console.log(str);
+options.makeTest();
 
-const fruit = "Some fruit";
+const{border, bg} = options.colors;
+console.log(border);
 
-console.log(fruit.indexOf("fruit")); // Находим индекс в строке с которого
-// начинается слово fruit
+console.log(Object.keys(options).length); // Выводит количество ключей в обьекте
 
-const logg = "Hello world";
+// console.log(options.name);
 
-console.log(logg.slice(6, 12)); // Вырезает часть строки с 6 по 12 символ (не включая)
-// slice(arg1, arg2) функция вырезает из строки: arg1 - начало, arg2 - конец 
-// slice(arg1) функция вырезает из строки: arg1 - начало и до конца строки
+// delete options.name;
 
-console.log(logg.slice(-5, -1));
+// console.log(options);
+// console.log(options['colors']['border']);
 
-console.log(logg.substring(6, 11)); // Не поддерживает отрицательные значения
+let counter = 0;
+for (let key in options) {
+    if (typeof(options[key]) === 'object') {
+        for (let i in options[key]) {
+            console.log(`Свойство ${i} имеет значение ${options[key][i]}`);
+        }
+    } else {
+        console.log(`Свойство ${key} имеет значение ${options[key]}`);
+        counter++;
+    }
+}
 
-console.log(logg.substr(6, 5)); // Второй аргумент - количество символов
-
-const num = 12.2;
-console.log(Math.round(num)); // Округляет число
-
-const test = "12.2px";
-console.log(parseInt(test)); // Переводит строку в число
-console.log(parseFloat(test)); // Переводит строку в число с плавающей точкой
+console.log(counter);

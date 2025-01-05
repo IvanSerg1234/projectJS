@@ -1,36 +1,33 @@
-// LESSON 11 Цикл в цикле и метки
-for (let i = 0; i < 3; i++) {
-    console.log(i);
-    for (let j = 0; j < 3; j++) {
-        console.log(j);
-    }
+// LESSON 14 Функции 2.0
+"use strict";
+
+const usdCurr = 28;
+const eurCurr = 32;
+const discount = 0.9;
+
+function convert(amount, curr) {
+     return curr * amount;
 }
 
-// *
-// **
-// ***
-// ****
-// *****
-// ******
+// return. После return функция завершает свою работу
+// не ставить пробел после return
 
-let result = '';
-const length = 7;
-for (let i = 0; i < length; i++) {
-    for (let j = 0; j < i; j++) {
-        result += "*";
-    }
-    result += "\n";
+function promotion(result) {
+    console.log(result * discount);
 }
 
-console.log(result);
+const res = convert(500, usdCurr);
+promotion(res);
 
-first: for (let i = 0; i < 3; i++) {
-    console.log(`First level ${i}`);
-    for (let j = 0; j < 5; j++) {
-        console.log(`Second level ${j}`);
-        for (let k = 0; k < 5; k++) {
-            if (k === 2) break first;
-            console.log(`Third level ${k}`);
-        }
+function test() {
+    for (let i = 0; i < 5; i++) {
+        console.log(i);
+        if (i === 3) return;
     }
+    console.log('Done');
 }
+
+test();
+
+function doNothing() {} // Пустая функция возвращает что то вроде undefined
+console.log(doNothing() === undefined);

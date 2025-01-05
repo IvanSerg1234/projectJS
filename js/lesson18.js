@@ -1,27 +1,32 @@
-// LESSON 18 Callback-функции
-'use strict'
+// LESSON 22 Основы ООП, прототипно-ориентированное наследование
+'use strict';
 
-function first() {
-    // Do something
-    setTimeout(function() {
-        console.log(1);
-    }, 500);
-}
+let str = "some";
+let strObj = new String(str);
 
-function second() {
-    console.log(2);
-}
+console.log(typeof(str));
+console.log(typeof(strObj));
 
-first();
-second();
+console.dir([1, 2, 3]);
 
-function learnJS(lang, callback) {
-    console.log(`Я учу: ${lang}`);
-    callback();
-}
+const soldier = {
+    health: 400,
+    armor: 100,
+    sayHello: function() {
+        console.log('Hello');
+    }
+};
 
-function done() {
-    console.log('Я прошел этот урок!');
-}
+const john = Object.create(soldier);
 
-learnJS('JavaScript', done);
+// const john = {
+//     health: 100
+// }
+
+// Устаревший формат
+// john.__proto__ = soldier;
+
+// Object.setPrototypeOf(john, soldier);
+
+// console.log(john.armor);
+john.sayHello();

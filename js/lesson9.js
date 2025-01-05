@@ -1,48 +1,36 @@
-// LESSON 9 Логические операторы
-"use strict";
-
-// const hamburger = 5;
-// const fries = null;
-
-// if (hamburger && fries) {
-//     console.log("I'm full!");
-// }
-
-// console.log((hamburger && fries));
-
-// const hamburger = 3;
-// const fries = 1;
-// const cola = 0;
-
-// console.log(hamburger === 3 && cola && fries);
-
-// console.log(1 && 0);
-// console.log(1 && 5);
-// console.log(null && 5);
-// console.log(0 && 'qedasdfe3adawd');
-
-
-// if (hamburger === 3 && cola === 1 && fries) {
-//     console.log("All're full!");
-// } else {
-//     console.log("We left your restaurant!");
-// }
-
-const hamburger = 0;
-const fries = 3;
-const cola = 0;
-const nuggets = 2;
-
-if (hamburger === 3 && cola === 2 || fries === 3 && nuggets) {
-    console.log("We are good!");
-} else {
-    console.log("We left your restaurant!");
+// LESSON 11 Цикл в цикле и метки
+for (let i = 0; i < 3; i++) {
+    console.log(i);
+    for (let j = 0; j < 3; j++) {
+        console.log(j);
+    }
 }
 
-console.log(hamburger === 3 && cola === 2 || fries === 3 && nuggets);
+// *
+// **
+// ***
+// ****
+// *****
+// ******
 
-let johnReport, alexReport, samReport, mariaReport = 'done';
+let result = '';
+const length = 7;
+for (let i = 0; i < length; i++) {
+    for (let j = 0; j < i; j++) {
+        result += "*";
+    }
+    result += "\n";
+}
 
-console.log(johnReport || alexReport || samReport || mariaReport)
+console.log(result);
 
-console.log(!0);
+first: for (let i = 0; i < 3; i++) {
+    console.log(`First level ${i}`);
+    for (let j = 0; j < 5; j++) {
+        console.log(`Second level ${j}`);
+        for (let k = 0; k < 5; k++) {
+            if (k === 2) break first;
+            console.log(`Third level ${k}`);
+        }
+    }
+}

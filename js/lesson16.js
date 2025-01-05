@@ -1,87 +1,40 @@
-// LESSON 16 Практика ч3. Используем функции
-'use strict'
+// LESSON 20 Массивы и псевдомассивы
+"use strict"
 
-let numberOfFilms;
+const arr = [2, 13, 6, 18, 30];
+arr.sort(compareNum)
+console.log(arr);
 
-function start() {
-    numberOfFilms = +prompt("Сколько фильмов вы уже посмотрели?", "");
-
-    while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
-        numberOfFilms = +prompt("Сколько фильмов вы уже посмотрели?", "");
-    }
+function compareNum(a, b) {
+    return a - b;
 }
 
-start();
 
-const personalMovieDB = {
-    count: numberOfFilms,
-    movies: {},
-    actors: {},
-    genres: [],
-    privat: false
-};
+// // arr[99] = 0;
+// // console.log(arr.length);
+// // console.log(arr);
+
+// arr.forEach(function(item, i, arr) {
+//     console.log(`${i} элемент: имеет значение ${item} внутри массива ${arr}`);
+// })
 
 
-// for (let i = 0; i < 2; i++) {
-//     const a = prompt("Один из последних просмотренных фильмов?", ""),
-//           b = prompt("На сколько оцените его?", "");
+// arr.pop(); // Удаляет последний элемент массива
+// arr.push(10); // Добавляет элемент в конец массива
 
-//     if (a != null && b != null && a != '' && b != '' && a.length < 50) {
-//         personalMovieDB.movies[a] = b;
-//         console.log('done');
-//     } else {
-//         console.log('error');
-//         i--;
-//     }
+// console.log(arr);
+
+// for (let i = 0; i < arr.length; i++) {
+//     console.log(arr[i]);
+// }
+// console.log(" ");
+
+
+// for (let value of arr) {
+//     console.log(value);
 // }
 
-function rememberMyFilms() {
-    let j = 0;
-    while (j < 2) {
-        const a = prompt("Один из последних просмотренных фильмов?", ""),
-              b = prompt("На сколько оцените его?", "");
-    
-        if (a != null && b != null && a != '' && b != '' && a.length < 50) {
-            personalMovieDB.movies[a] = b;
-            console.log('done');
-            j++;
-        } else {
-            console.log('error');
-            j--;
-        }
-    }
-}
-
-rememberMyFilms();
-
-function detectPersonalLevel() {
-    if (personalMovieDB.count < 10) {
-        console.log("Просмотрено довольно мало фильмов");
-    } else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
-        console.log("Вы классический зритель");
-    } else if (personalMovieDB.count >= 30) {
-        console.log("Вы киноман");
-    } else {
-        console.log("Произошла ошибка");
-    }
-}
-
-detectPersonalLevel();
-
-function showMyDB(hidden) {
-    if (!hidden) {
-        console.log(personalMovieDB);
-    }
-}
-
-showMyDB(personalMovieDB.privat);
-
-function writeYourGenres() {
-    for (let i = 1; i <= 3; i++) {
-        personalMovieDB.genres[i - 1] = prompt(`Ваш любимый жанр под номером ${i}`);
-    }
-}
-
-writeYourGenres();
-
-console.log(personalMovieDB);
+const str = prompt("", "");
+const products = str.split(", ");
+products.sort();
+console.log(products.join("; "));

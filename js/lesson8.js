@@ -1,36 +1,23 @@
-// LESSON 8 Условия
+// LESSON 10 Циклы
 "use strict";
 
-if (4 == 9) {
-    console.log('Ok!');
-} else {
-    console.log("Error");
-}
+let num = 50;
 
-
-// if (num < 49) {
-//     console.log("Error");
-// } else if (num > 100) {
-//     console.log("Too Much");
-// } else {
-//     console.log("Ok!");
+// while (num <= 55) {
+//     console.log(num);
+//     num++;
 // }
 
-// (num === 50) ? console.log("Ok!") : console.log("Error"); 
+// do {
+//     console.log(num);
+//     num++;
+// }
+// while (num < 55);
 
-const num = 50;
-
-switch (num) {
-    case 49:
-        console.log("Wrong!");
-        break;
-    case 100:
-        console.log("Too much!");
-        break;
-    case 50: 
-        console.log("You're right!");
-        break;
-    default:
-        console.log("Not this time!");
-        break;
+for (let i = 1; i < 10; i++) {
+    if (i === 6) {
+        // break; // прерывает цикл
+        continue; // пропускает шаг цикла
+    }
+    console.log(i);
 }
