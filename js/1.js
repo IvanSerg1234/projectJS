@@ -2,9 +2,8 @@ const Miha = {
     age: 27,
     job: 'Patrol Police',
     unlikedHobby: 'Шлюший балл',
-    favouriteGames: ['counterStrike2',' euroTruckSimulator'],
-    zanyat: false
-    }
+    favouriteGames: ['counterStrike2',' euroTruckSimulator']
+};
     
 let time = 19;
     
