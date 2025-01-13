@@ -23,24 +23,24 @@
 
 
 
-const Illya = {
-    age: 20,
-    job: 'Trader',
-    Hobby: 'Sliv balanca',
-    ban: 'muzhichki',
-    term: 'permanent'
-};
+// const Illya = {
+//     age: 20,
+//     job: 'Trader',
+//     Hobby: 'Sliv balanca',
+//     ban: 'muzhichki',
+//     term: 'permanent'
+// };
 
-let date = '03.01.2025'
+// let date = '03.01.2025'
     
-function isIllyaZabanen(obj) {
-    if (date <= '01.01.2025') {
-        console.log(`Ілля (кажан) ${obj.job}`);
-    } else if (date === '02.01.2025') {
-        console.log(`Ілля (кажан) сейчас делает ${obj.Hobby}`);
-    } else {
-        console.log(`Ілля (кажан) ${obj.term} забанен в ${obj.ban} `);
-    }
-}
+// function isIllyaZabanen(obj) {
+//     if (date <= '01.01.2025') {
+//         console.log(`Ілля (кажан) ${obj.job}`);
+//     } else if (date === '02.01.2025') {
+//         console.log(`Ілля (кажан) сейчас делает ${obj.Hobby}`);
+//     } else {
+//         console.log(`Ілля (кажан) ${obj.term} забанен в ${obj.ban} `);
+//     }
+// }
     
-isIllyaZabanen(Illya);
+// isIllyaZabanen(Illya);

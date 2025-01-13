@@ -1,16 +1,16 @@
 'use strict';
 
 function deepCount(a) {
-    let count = 0;
+    let count = 0; // Задаем переменную которая выдает количество элементов в массиве
 
-    for (let i = 0; i < a.length; i++) {
-        count++;
-        if (Array.isArray(a[i])) {
-            count += deepCount(a[i]);
+    for (let i = 0; i < a.length; i++) { // Перебираем массив до конца (длинна массива)
+        count++; // Прибавляем к переменной 1
+        if (Array.isArray(a[i])) { // Проверяем есть ли элемент внутри массива массивом
+            count += deepCount(a[i]); // Если да, то рекурсивно перебираем внутренний подмассив
         }
     }
 
-    return count;
+    return count; // возвращаем количество элементов в массиве
 }
 
 console.log(deepCount([[[[[[[[[]]]]]]]]]));
