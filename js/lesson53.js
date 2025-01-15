@@ -144,7 +144,7 @@ window.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // const modalTimerId = setTimeout(openModal, 5000);
+    const modalTimerId = setTimeout(openModal, 5000);
 
     function showModalByScroll() {
         if (window.pageYOffset + document.documentElement.clientHeight >= document.
@@ -187,7 +187,7 @@ window.addEventListener("DOMContentLoaded", () => {
             element.innerHTML = `
                 <img src=${this.src} alt=${this.alt}>
                 <h3 class="menu__item-subtitle">${this.title}</h3>
-                <div class="menu__item-descr">${this.description}</div>
+                <div class="menu__item-descr">${this.descr}</div>
                 <div class="menu__item-divider"></div>
                 <div class="menu__item-price">
                     <div class="menu__item-cost">Цена:</div>
@@ -225,5 +225,14 @@ window.addEventListener("DOMContentLoaded", () => {
         21,
         '.menu .container',
         'menu__item'
+    ).render();
+
+    new MenuCard(
+        "img/tabs/hamburger.jpg",
+        "elite",
+        'Меню "Cбалансированое"',
+        'Меню "Сбалансированное" - это соответствие вашего рациона всем научным рекомендациям. Мы тщательно просчитываем вашу потребность в к/б/ж/у и создаем лучшие блюда для вас.',
+        17,
+        ".menu .container"
     ).render();
 });
